@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آموزشگاه حسابداران برتر | آموزش تخصصی حسابداری</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--green:#073c2d;
+--dark:#031f18;
+--green2:#0d6044;
+--gold:#d6b36a;
+--gold-light:#f1d99e;
+--cream:#f8f8f3;
+--white:#fff;
+--gray:#78867f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:'Vazirmatn',sans-serif;
+background:var(--cream);
+color:#17251f;
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+
+/* HEADER */
+header{
+position:fixed;top:0;width:100%;z-index:1000;
+background:rgba(3,31,24,.96);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #d6b36a35;
+}
+.nav{
+height:82px;display:flex;align-items:center;
+justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:12px;color:white}
+.logo{
+width:49px;height:49px;border:1px solid var(--gold);
+border-radius:15px;display:grid;place-items:center;
+color:var(--gold);font-size:25px;font-weight:900;
+background:linear-gradient(145deg,#14543d,#06291f);
+}
+.brand h2{font-size:19px;font-weight:900}
+.brand small{display:block;color:var(--gold);font-size:10px;letter-spacing:2px}
+.nav-links{display:flex;gap:25px;align-items:center}
+.nav-links a{font-size:13px;color:#e5eee8;transition:.3s}
+.nav-links a:hover{color:var(--gold)}
+.btn{
+display:inline-flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,var(--gold-light),var(--gold));
+color:#173626;padding:13px 23px;border-radius:10px;
+font-weight:800;border:0;cursor:pointer;transition:.3s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #d6b36a44}
+.menu-btn{display:none;background:none;color:white;border:0;font-size:27px}
+
+/* HERO */
+.hero{
+min-height:750px;position:relative;overflow:hidden;
+background:
+radial-gradient(ellipse at 15% 30%,#14614366,transparent 42%),
+radial-gradient(ellipse at 85% 80%,#b18c4930,transparent 38%),
+linear-gradient(125deg,#031f18,#073c2d 60%,#062b21);
+color:white;padding:165px 0 100px;
+}
+.hero:before{
+content:"";position:absolute;inset:0;opacity:.08;
+background-image:linear-gradient(90deg,#fff 1px,transparent 1px),
+linear-gradient(#fff 1px,transparent 1px);
+background-size:55px 55px;
+}
+.hero-content{
+position:relative;display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;gap:50px;
+}
+.eyebrow{
+display:inline-flex;gap:10px;align-items:center;
+color:var(--gold-light);font-size:13px;margin-bottom:23px;
+border:1px solid #d6b36a55;padding:9px 15px;border-radius:30px;
+}
+.eyebrow span{width:7px;height:7px;background:var(--gold);border-radius:50%}
+.hero h1{font-size:clamp(36px,5vw,62px);line-height:1.55;font-weight:900}
+.hero h1 em{color:var(--gold-light);font-style:normal}
+.hero p{font-size:14px;line-height:2.6;color:#c8d8d0;margin-top:18px}
+.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn-outline{border:1px solid #ffffff55;color:white;padding:13px 22px;border-radius:10px}
+.btn-outline:hover{color:var(--gold);border-color:var(--gold)}
+.hero-note{margin-top:35px;color:#d4e0d9;font-size:12px}
+.hero-art{min-height:400px;display:grid;place-items:center;position:relative}
+.orbit{
+width:325px;height:325px;border:1px solid #d6b36a66;
+border-radius:50%;display:grid;place-items:center;
+box-shadow:0 0 90px #d6b36a12;
+}
+.orbit:before{
+content:"";position:absolute;width:270px;height:270px;
+border:1px solid #d6b36a35;border-radius:50%;
+}
+.chart-card{
+width:245px;padding:27px;border:1px solid #ffffff26;
+border-radius:20px;background:#ffffff15;
+backdrop-filter:blur(18px);box-shadow:0 25px 70px #0005;
+position:relative;z-index:2;
+}
+.chart-top{display:flex;justify-content:space-between;font-size:11px}
+.chart-value{font-size:30px;font-weight:900;color:var(--gold-light);margin:17px 0}
+.chart-bars{height:90px;display:flex;align-items:end;gap:9px}
+.chart-bars span{
+flex:1;border-radius:5px 5px 0 0;
+background:linear-gradient(to top,var(--gold),#f3dda8);
+}
+.floating{
+position:absolute;background:#ffffff18;backdrop-filter:blur(10px);
+border:1px solid #ffffff22;border-radius:13px;padding:13px;
+font-size:11px;z-index:3;
+}
+.float-one{top:25px;right:0}
+.float-two{bottom:30px;left:0;color:var(--gold-light)}
+
+/* STATS */
+.stats{margin-top:-40px;position:relative;z-index:5}
+.stats-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+background:white;border-radius:18px;box-shadow:0 18px 55px #073c2d15;
+padding:28px 15px;
+}
+.stat{text-align:center;border-left:1px solid #e9eee9}
+.stat:last-child{border:0}
+.stat strong{display:block;color:var(--green);font-size:25px}
+.stat span{font-size:12px;color:var(--gray)}
+
+/* SECTIONS */
+section{padding:95px 0}
+.section-head{text-align:center;margin-bottom:45px}
+.section-tag{font-size:12px;color:#a7833e;font-weight:800}
+.section-head h2{font-size:clamp(25px,3vw,36px);color:var(--green);margin:12px 0}
+.section-head p{font-size:13px;color:var(--gray);line-height:2.2}
+.gold-line{width:55px;height:3px;background:var(--gold);margin:18px auto;border-radius:5px}
+
+/* COURSES */
+.courses{background:white}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.course-card{
+border:1px solid #e9eee9;border-radius:17px;padding:27px;
+background:white;transition:.35s;position:relative;overflow:hidden;
+}
+.course-card:hover{transform:translateY(-8px);box-shadow:0 18px 55px #073c2d15}
+.course-icon{
+width:55px;height:55px;display:grid;place-items:center;
+background:#edf5ef;border-radius:14px;color:var(--green);
+font-size:25px;margin-bottom:20px;
+}
+.course-card h3{font-size:17px;color:var(--green);margin-bottom:12px}
+.course-card p{font-size:12px;line-height:2.2;color:#7b8981;min-height:55px}
+.course-footer{
+display:flex;justify-content:space-between;align-items:center;
+margin-top:22px;padding-top:17px;border-top:1px solid #edf0ec;
+}
+.course-footer span{font-size:11px;color:var(--gray)}
+.course-footer a{font-size:12px;color:#a7833e;font-weight:800}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-visual{
+min-height:380px;border-radius:22px;
+background:radial-gradient(circle,#b99b5d55,transparent 40%),
+linear-gradient(145deg,#0d6044,#03291f);
+display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.about-visual:before{
+content:"";position:absolute;width:300px;height:300px;
+border:1px solid #d6b36a66;border-radius:50%;
+}
+.about-emblem{text-align:center;color:var(--gold-light);position:relative}
+.about-emblem div{font-size:100px;font-weight:900}
+.about-emblem span{display:block;letter-spacing:3px;font-size:13px}
+.about-copy h2{font-size:31px;line-height:1.8;color:var(--green);margin:12px 0}
+.about-copy p{font-size:13px;line-height:2.5;color:var(--gray)}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:25px}
+.feature{font-size:12px;display:flex;gap:9px;align-items:center}
+.check{color:#a7833e;font-size:18px}
+
+/* WHY */
+.why{background:var(--dark);color:white}
+.why .section-head h2{color:white}
+.why .section-head p{color:#b3c8bc}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why-card{
+padding:26px 18px;border:1px solid #ffffff20;border-radius:15px;
+background:#ffffff08;text-align:center;transition:.3s;
+}
+.why-card:hover{background:#ffffff12;transform:translateY(-5px);border-color:#d6b36a88}
+.why-icon{font-size:30px;color:var(--gold);margin-bottom:17px}
+.why-card h3{font-size:15px;margin-bottom:10px}
+.why-card p{font-size:11px;color:#b6c8bd;line-height:2}
+
+/* TEACHER */
+.teacher-box{
+max-width:650px;margin:auto;background:white;
+border:1px solid #e9eee9;border-radius:20px;
+overflow:hidden;box-shadow:0 18px 55px #073c2d12;
+display:grid;grid-template-columns:200px 1fr;
+align-items:center;
+}
+.teacher-photo{
+height:230px;display:grid;place-items:center;
+background:linear-gradient(145deg,#e8eee6,#d4e1d5);
+color:var(--green);font-size:75px;
+}
+.teacher-info{padding:28px}
+.teacher-info h3{font-size:21px;color:var(--green)}
+.teacher-info .role{color:#a7833e;font-size:12px;margin:8px 0 15px}
+.teacher-info p{font-size:12px;color:var(--gray);line-height:2}
+
+/* REGISTER */
+.register{background:#f0f2eb}
+.register-box{
+display:grid;grid-template-columns:.8fr 1.2fr;
+background:var(--green);border-radius:22px;overflow:hidden;
+box-shadow:0 18px 55px #073c2d15;
+}
+.register-info{padding:43px;color:white}
+.register-info h2{font-size:27px;line-height:1.8;margin:15px 0}
+.register-info p{font-size:12px;line-height:2.5;color:#c6d8cd}
+.register-form{padding:40px;background:white}
+.register-form h3{color:var(--green);font-size:20px;margin-bottom:23px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;color:#64736a;font-weight:700}
+.field input,.field select,.field textarea{
+border:1px solid #e4e9e2;background:#fafbf8;
+border-radius:9px;padding:13px;outline:none;font-size:12px;width:100%;
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:80px}
+.submit{width:100%;margin-top:18px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.contact-card{
+padding:26px;border:1px solid #e7ece5;border-radius:15px;
+text-align:center;background:white;transition:.3s;
+}
+.contact-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px #073c2d12}
+.contact-card div{font-size:26px;color:#a7833e;margin-bottom:12px}
+.contact-card h3{font-size:14px;color:var(--green);margin-bottom:9px}
+.contact-card p{font-size:12px;color:var(--gray);line-height:2.3}
+.contact-card a{color:var(--green);font-weight:800}
+
+/* FOOTER */
+footer{background:#031f18;color:white;padding:55px 0 20px}
+.footer-grid{
+display:grid;grid-template-columns:1.3fr 1fr 1fr;
+gap:40px;padding-bottom:35px;
+}
+footer h3{font-size:17px;color:var(--gold-light);margin-bottom:18px}
+footer p,footer a{font-size:11px;color:#bdccc2;line-height:2.7}
+footer a{display:block;transition:.2s}
+footer a:hover{color:var(--gold)}
+.footer-bottom{
+border-top:1px solid #ffffff20;padding-top:20px;
+text-align:center;font-size:10px;color:#8da297;
+}
+.socials{display:flex;gap:12px;margin-top:15px}
+.socials a{
+width:35px;height:35px;border:1px solid #ffffff30;
+border-radius:50%;display:grid;place-items:center;
+}
+.back-top{
+position:fixed;bottom:22px;left:22px;width:42px;height:42px;
+border:0;border-radius:12px;background:var(--gold);
+color:var(--dark);font-size:19px;cursor:pointer;z-index:50;display:none;
+}
+.back-top.show{display:block}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+.nav-links{
+display:none;position:absolute;top:82px;right:0;width:100%;
+padding:22px;background:#042b21;flex-direction:column;align-items:stretch;
+}
+.nav-links.active{display:flex}
+.menu-btn{display:block}
+.nav-btn{display:none}
+.hero-content{grid-template-columns:1fr;text-align:center}
+.hero p{margin:auto}
+.hero-actions{justify-content:center}
+.hero-art{min-height:350px}
+.about-grid,.register-box{grid-template-columns:1fr}
+.course-grid{grid-template-columns:repeat(2,1fr)}
+.why-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+.hero{padding-top:140px}
+.hero-art{transform:scale(.85);margin:-15px 0}
+.stats-grid{grid-template-columns:1fr 1fr;gap:20px}
+.stat:nth-child(2){border:0}
+.course-grid,.contact-grid{grid-template-columns:1fr}
+.why-grid{grid-template-columns:1fr 1fr}
+.features{grid-template-columns:1fr}
+.form-grid{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.teacher-box{grid-template-columns:1fr}
+.teacher-photo{height:160px}
+.register-info,.register-form{padding:27px}
+.footer-grid{grid-template-columns:1fr}
+section{padding:75px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="#home" class="brand">
+<div class="logo">ب</div>
+<div>
+<h2>حسابداران برتر</h2>
+<small>ACCOUNTANTS ACADEMY</small>
+</div>
+</a>
+
+<nav class="nav-links" id="navLinks">
+<a href="#home">صفحه اصلی</a>
+<a href="#about">درباره ما</a>
+<a href="#courses">دوره‌ها</a>
+<a href="#teacher">مدرس اصلی</a>
+<a href="#register">ثبت‌نام</a>
+<a href="#contact">تماس با ما</a>
+</nav>
+
+<a href="#register" class="btn nav-btn">شروع ثبت‌نام ←</a>
+<button class="menu-btn" id="menuBtn">☰</button>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+<div class="reveal">
+<div class="eyebrow"><span></span> آینده مالی خود را حرفه‌ای بسازید</div>
+<h1>از یادگیری تا <em>متخصص شدن</em> در حسابداری</h1>
+<p>
+در آموزشگاه حسابداران برتر، دانش حسابداری را به مهارت واقعی تبدیل کنید.
+با آموزش کاربردی، اساتید باتجربه و مسیر یادگیری هدفمند،
+برای ورود حرفه‌ای به بازار کار آماده شوید.
+</p>
+<div class="hero-actions">
+<a href="#courses" class="btn">مشاهده دوره‌ها ↗</a>
+<a href="#about" class="btn-outline">آشنایی با آموزشگاه</a>
+</div>
+<div class="hero-note">✦ آموزش کاربردی، مسیر روشن، آینده حرفه‌ای</div>
+</div>
+
+<div class="hero-art reveal">
+<div class="orbit">
+<div class="chart-card">
+<div class="chart-top"><span>تحلیل مالی</span><span>✦</span></div>
+<div class="chart-value">Finance</div>
+<div style="font-size:10px;color:#b5c8bd">مسیر رشد و تخصص حرفه‌ای</div>
+<div class="chart-bars">
+<span style="height:35%"></span>
+<span style="height:55%"></span>
+<span style="height:43%"></span>
+<span style="height:75%"></span>
+<span style="height:60%"></span>
+<span style="height:95%"></span>
+</div>
+</div>
+</div>
+<div class="floating float-one">✦ آموزش تخصصی</div>
+<div class="floating float-two">حسابداران برتر</div>
+</div>
+</div>
+</section>
+
+<div class="container stats reveal">
+<div class="stats-grid">
+<div class="stat"><strong>01</strong><span>آموزش هدفمند</span></div>
+<div class="stat"><strong>02</strong><span>یادگیری کاربردی</span></div>
+<div class="stat"><strong>03</strong><span>مسیر تخصصی</span></div>
+<div class="stat"><strong>04</strong><span>آینده شغلی</span></div>
+</div>
+</div>
+
+<section class="courses" id="courses">
+<div class="container">
+<div class="section-head reveal">
+<span class="section-tag">OUR COURSES</span>
+<h2>دوره‌های آموزشی ما</h2>
+<p>مهارت‌هایی یاد بگیرید که در دنیای واقعی حسابداری به آن‌ها نیاز دارید.</p>
+<div class="gold-line"></div>
+</div>
+
+<div class="course-grid">
+<article class="course-card reveal">
+<div class="course-icon">▤</div>
+<h3>حسابداری مقدماتی</h3>
+<p>آشنایی با اصول حسابداری، ثبت اسناد، دفتر روزنامه و دفتر کل.</p>
+<div class="course-footer"><span>مناسب شروع یادگیری</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+
+<article class="course-card reveal">
+<div class="course-icon">◈</div>
+<h3>حسابداری پیشرفته</h3>
+<p>تحلیل صورت‌های مالی، بستن حساب‌ها و تهیه گزارش‌های تخصصی.</p>
+<div class="course-footer"><span>سطح پیشرفته</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+
+<article class="course-card reveal">
+<div class="course-icon">٪</div>
+<h3>مالیات و قوانین مالیاتی</h3>
+<p>آشنایی با مفاهیم مالیاتی، اظهارنامه و تکالیف قانونی کسب‌وکارها.</p>
+<div class="course-footer"><span>آموزش تخصصی</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+
+<article class="course-card reveal">
+<div class="course-icon">▦</div>
+<h3>حقوق و دستمزد</h3>
+<p>محاسبات حقوق، مزایا، کسورات و آشنایی با بیمه و قوانین کار.</p>
+<div class="course-footer"><span>مهارت کاربردی</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+
+<article class="course-card reveal">
+<div class="course-icon">▧</div>
+<h3>نرم‌افزارهای حسابداری</h3>
+<p>آشنایی با محیط نرم‌افزارهای مالی و ثبت عملیات حسابداری.</p>
+<div class="course-footer"><span>کارگاه عملی</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+
+<article class="course-card reveal">
+<div class="course-icon">◉</div>
+<h3>اکسل ویژه حسابداران</h3>
+<p>فرمول‌ها، توابع و تهیه گزارش‌های مالی با ابزارهای اکسل.</p>
+<div class="course-footer"><span>مهارت دیجیتال</span><a href="#register">اطلاعات دوره ←</a></div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about-grid">
+<div class="about-visual reveal">
+<div class="about-emblem">
+<div>ب</div>
+<span>ACCOUNTANTS</span>
+<span>ACADEMY</span>
+</div>
+</div>
+
+<div class="about-copy reveal">
+<span class="section-tag">ABOUT US</span>
+<h2>دانش امروز، تخصص فردا</h2>
+<p>
+آموزشگاه حسابداران برتر با هدف توسعه مهارت‌های مالی و حسابداری،
+تلاش می‌کند بستری مناسب برای یادگیری اصولی و کاربردی فراهم کند.
+هدف ما فقط آموزش مفاهیم نیست؛ بلکه کمک به ساختن مهارت‌هایی است
+که در مسیر حرفه‌ای هنرجویان ارزش‌آفرین باشند.
+</p>
+<div class="features">
+<div class="feature"><span class="check">✦</span> آموزش منظم و هدفمند</div>
+<div class="feature"><span class="check">✦</span> محتوای کاربردی</div>
+<div class="feature"><span class="check">✦</span> مسیر یادگیری مرحله‌ای</div>
+<div class="feature"><span class="check">✦</span> توجه به بازار کار</div>
+</div>
+<a href="#register" class="btn" style="margin-top:30px">مشاوره و ثبت‌نام ←</a>
+</div>
+</div>
+</section>
+
+<section class="why">
+<div class="container">
+<div class="section-head reveal">
+<span class="section-tag">WHY US</span>
+<h2>چرا حسابداران برتر؟</h2>
+<p>یک مسیر آموزشی منظم برای ساختن مهارت‌های حرفه‌ای.</p>
+<div class="gold-line"></div>
+</div>
+
+<div class="why-grid">
+<div class="why-card reveal"><div class="why-icon">✧</div><h3>آموزش هدفمند</h3><p>یادگیری مرحله‌به‌مرحله و متناسب با سطح هنرجو.</p></div>
+<div class="why-card reveal"><div class="why-icon">▣</div><h3>تمرین کاربردی</h3><p>تمرکز بر مهارت‌ها و مثال‌های قابل استفاده.</p></div>
+<div class="why-card reveal"><div class="why-icon">♧</div><h3>اساتید متخصص</h3><p>بهره‌گیری از دانش و تجربه مدرسان حسابداری.</p></div>
+<div class="why-card reveal"><div class="why-icon">↗</div><h3>رشد حرفه‌ای</h3><p>کمک به تقویت مهارت و آمادگی برای بازار کار.</p></div>
+</div>
+</div>
+</section>
+
+<section id="teacher">
+<div class="container">
+<div class="section-head reveal">
+<span class="section-tag">OUR HEAD INSTRUCTOR</span>
+<h2>مدیریت و مدرس اصلی آموزشگاه</h2>
+<p>معرفی مسئول اصلی مجموعه حسابداران برتر</p>
+<div class="gold-line"></div>
+</div>
+
+<div class="teacher-box reveal">
+<div class="teacher-photo">♙</div>
+<div class="teacher-info">
+<h3>ایمان دهقانی‌زاده</h3>
+<div class="role">مدیر و استاد اصلی آموزشگاه حسابداران برتر</div>
+<p>
+مسئولیت مدیریت و آموزش در مجموعه حسابداران برتر.
+برای دریافت اطلاعات دوره‌ها و مشاوره آموزشی با آموزشگاه تماس بگیرید.
+</p>
+<a href="tel:09133518671" class="btn" style="margin-top:17px">تماس با آموزشگاه</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="register" id="register">
+<div class="container">
+<div class="register-box reveal">
+<div class="register-info">
+<span class="section-tag">JOIN US</span>
+<h2>اولین قدم برای آینده حرفه‌ای خود را بردارید.</h2>
+<p>
+فرم درخواست مشاوره را تکمیل کنید تا اطلاعات دوره‌ها و شرایط ثبت‌نام در اختیار شما قرار گیرد.
+</p>
+<p style="margin-top:25px;color:var(--gold-light)">
+☎ 09133518671
+</p>
+</div>
+
+<form class="register-form" id="registerForm">
+<h3>فرم درخواست مشاوره و ثبت‌نام</h3>
+<div class="form-grid">
+<div class="field">
+<label for="fullname">نام و نام خانوادگی</label>
+<input id="fullname" name="fullname" type="text" placeholder="نام شما" required>
+</div>
+<div class="field">
+<label for="phone">شماره تماس</label>
+<input id="phone" name="phone" type="tel" placeholder="09xxxxxxxxx" required>
+</div>
+<div class="field full">
+<label for="course">دوره موردنظر</label>
+<select id="course" name="course" required>
+<option value="">انتخاب دوره</option>
+<option>حسابداری مقدماتی</option>
+<option>حسابداری پیشرفته</option>
+<option>مالیات</option>
+<option>حقوق و دستمزد</option>
+<option>نرم‌افزار حسابداری</option>
+<option>اکسل حسابداری</option>
+</select>
+</div>
+<div class="field full">
+<label for="message">توضیحات (اختیاری)</label>
+<textarea id="message" name="message" placeholder="سؤال یا توضیح خود را بنویسید..."></textarea>
+</div>
+</div>
+<button type="submit" class="btn submit">ارسال درخواست ثبت‌نام ←</button>
+<p id="formMessage" style="font-size:11px;margin-top:12px;color:#a7833e" aria-live="polite"></p>
+</form>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-head reveal">
+<span class="section-tag">CONTACT US</span>
+<h2>راه‌های ارتباط با ما</h2>
+<p>برای دریافت اطلاعات بیشتر با آموزشگاه در ارتباط باشید.</p>
+<div class="gold-line"></div>
+</div>
+
+<div class="contact-grid">
+<div class="contact-card reveal">
+<div>☎</div>
+<h3>شماره تماس</h3>
+<p><a href="tel:09133518671">09133518671</a></p>
+</div>
+
+<div class="contact-card reveal">
+<div>⌖</div>
+<h3>آدرس آموزشگاه</h3>
+<p>یزد، صفائیه، بلوار شهیدان اشرف، خیابان امامت، امامت ۱۰</p>
+</div>
+
+<div class="contact-card reveal">
+<div>♙</div>
+<h3>مدیر و مدرس اصلی</h3>
+<p>ایمان دهقانی‌زاده</p>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<h3>آموزشگاه حسابداران برتر</h3>
+<p>مسیر یادگیری را حرفه‌ای آغاز کنید. همراه شما در مسیر آموزش و توسعه مهارت‌های حسابداری و مالی.</p>
+</div>
+
+<div>
+<h3>دسترسی سریع</h3>
+<a href="#home">صفحه اصلی</a>
+<a href="#about">درباره ما</a>
+<a href="#courses">دوره‌های آموزشی</a>
+<a href="#teacher">مدرس اصلی</a>
+</div>
+
+<div>
+<h3>ارتباط با ما</h3>
+<p>مدیر: ایمان دهقانی‌زاده</p>
+<p>تلفن: <a href="tel:09133518671">09133518671</a></p>
+<p>یزد، صفائیه، بلوار شهیدان اشرف، خیابان امامت، امامت ۱۰</p>
+</div>
+</div>
+
+<div class="footer-bottom">
+© تمامی حقوق این وب‌سایت متعلق به آموزشگاه حسابداران برتر است.
+</div>
+</div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="بازگشت به بالا">↑</button>
+
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+
+menuBtn.addEventListener('click',()=>{
+navLinks.classList.toggle('active');
+menuBtn.textContent=navLinks.classList.contains('active')?'×':'☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link=>{
+link.addEventListener('click',()=>{
+navLinks.classList.remove('active');
+menuBtn.textContent='☰';
+});
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+backTop.classList.toggle('show',window.scrollY>500);
+});
+backTop.addEventListener('click',()=>{
+window.scrollTo({top:0,behavior:'smooth'});
+});
+
+document.getElementById('registerForm').addEventListener('submit',function(e){
+e.preventDefault();
+const name=document.getElementById('fullname').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const message=document.getElementById('formMessage');
+
+if(!name || !phone){
+message.textContent='لطفاً اطلاعات ضروری را تکمیل کنید.';
+return;
+}
+
+message.textContent='فرم شما در نسخه نمایشی آماده شد؛ برای ثبت واقعی باید به سرور متصل شود.';
+});
+</script>
+
+</body>
+</html>
